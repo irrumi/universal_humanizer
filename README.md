@@ -81,31 +81,49 @@ If Universal Humanizer is active, it will flag the "not X, but Y" contrast (§1)
 
 ## Usage
 
-### 1. Direct Invocation
+Universal Humanizer adapts to your agent interface:
+
+### 1. GUI Agent Environments (Google Antigravity, Cursor, Windsurf)
+
+- **Google Antigravity (IDE & 2.0)**: Type `/` or `@` or select the skill from the prompt bar. Antigravity attaches an interactive skill chip `[<>] universal-humanizer` directly to your input:
+  ```text
+  [<>] universal-humanizer
+  Очеловечь этот черновик:
+  [Paste your text here]
+  ```
+- **Cursor / Windsurf**: Mention the rule directly via `@universal-humanizer` (or `@humanizer.mdc`), or simply edit files in the workspace (the `.cursorrules` / `.windsurfrules` file applies the rules automatically).
+
+### 2. Terminal CLIs (Claude Code, Gemini CLI, Codex CLI)
+
+Use the registered slash command:
 ```text
 /humanizer
 
 [Paste your text here]
 ```
 
-### 2. Plain Language Request
+### 3. Natural Language (Any Agent)
+
+No commands or chips required. Every supported assistant features progressive disclosure: whenever you ask to humanize text, strip AI cliches, or smooth machine prose, the skill triggers automatically:
 ```text
 Please humanize this draft using the universal humanizer guidelines:
 [Paste your text here]
 ```
+```text
+Очеловечь этот текст, убери нейросетевые штампы и неестественные обороты:
+[Вставь текст сюда]
+```
 
-### 3. File Rewriting (Preserves Code, Tables & Metadata)
+### 4. File Rewriting (Preserves Code, Tables & Metadata)
 ```text
 Humanize the prose in docs/announcement.md
 ```
 *Note: In file mode, Universal Humanizer updates only markdown prose. Code blocks, inline commands, URLs, YAML frontmatter, and data tables are left untouched.*
 
-### 4. Matching Your Authentic Voice
+### 5. Matching Your Authentic Voice (Layer 2 Calibration)
 Provide a short sample of your genuine writing to match rhythm, sentence lengths, and stylistic habits:
 
 ```text
-/humanizer
-
 Here is a sample of my writing style:
 [Paste 2-3 paragraphs of text you wrote yourself]
 
