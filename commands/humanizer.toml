@@ -1,0 +1,10 @@
+description = "Rewrite AI-sounding text into natural human prose without altering facts"
+prompt = """
+Please rewrite the following text according to Universal Humanizer principles:
+- Remove staged contrasts (not X, but Y), dramatic one-line closers, and phantom debates.
+- Eliminate repetitive triplets, excessive em dashes, and overused AI buzzwords.
+- Introduce varied sentence lengths (burstiness) and ensure natural flow.
+- Preserve every verifiable fact, number, date, and name without hallucinating new details.
+
+{{args}}
+"""
