@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "universal-humanizer",
+  "description": "Rewrite AI-sounding text so it reads naturally like human prose without changing facts.",
+  "version": "1.0.0",
+  "author": {
+    "name": "irrumi",
+    "url": "https://github.com/irrumi"
+  },
+  "homepage": "https://github.com/irrumi/universal_humanizer",
+  "repository": "https://github.com/irrumi/universal_humanizer",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "humanize",
+    "prose",
+    "style",
+    "anti-ai"
+  ],
+  "skills": [
+    "./"
+  ]
+}

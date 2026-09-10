@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "universal-humanizer",
+  "owner": {
+    "name": "irrumi",
+    "url": "https://github.com/irrumi"
+  },
+  "description": "Universal Humanizer: cross-platform agent skill for authentic human prose.",
+  "plugins": [
+    {
+      "name": "universal-humanizer",
+      "source": "./",
+      "description": "Rewrite AI-sounding text so it reads naturally like human prose without changing facts.",
+      "license": "MIT",
+      "keywords": [
+        "writing",
+        "editing",
+        "humanize",
+        "prose",
+        "style",
+        "anti-ai"
+      ]
+    }
+  ]
+}

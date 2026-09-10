@@ -1,0 +1,7 @@
+{
+  "name": "universal-humanizer",
+  "version": "1.0.0",
+  "description": "Rewrite AI-sounding text so it reads naturally like human prose without changing facts.",
+  "license": "MIT",
+  "contextFileName": "rules/humanizer.md"
+}

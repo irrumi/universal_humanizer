@@ -1,0 +1,10 @@
+{
+  "name": "universal-humanizer",
+  "description": "Rewrite AI-sounding text so it reads naturally like human prose without changing facts.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "irrumi",
+    "url": "https://github.com/irrumi"
+  }
+}
