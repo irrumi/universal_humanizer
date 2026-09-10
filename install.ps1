@@ -24,21 +24,11 @@ $RawBase = "https://raw.githubusercontent.com/$Repo/$Branch"
 
 $UserHome = $env:USERPROFILE
 $CurrentDir = (Get-Location).Path
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path -ErrorAction SilentlyContinue
+$ScriptDir = if ($PSScriptRoot) { $PSScriptRoot } elseif ($MyInvocation.MyCommand -and $MyInvocation.MyCommand.Path) { Split-Path -Parent $MyInvocation.MyCommand.Path } else { $null }
 
 $IsLocal = $false
 if ($ScriptDir -and (Test-Path (Join-Path $ScriptDir "SKILL.md"))) {
     $IsLocal = $true
-}
-
-function Get-ResourceContent {
-    param([string]$RelativePath)
-    if ($IsLocal -and (Test-Path (Join-Path $ScriptDir $RelativePath))) {
-        return Get-Content -Path (Join-Path $ScriptDir $RelativePath) -Raw -Encoding UTF8
-    }
-    $url = "$RawBase/$RelativePath"
-    $response = Invoke-RestMethod -Uri $url -Method Get
-    return $response
 }
 
 function Install-SkillFile {
@@ -61,8 +51,13 @@ function Install-SkillFile {
         Write-Host "  [BACKUP] Backed up existing file to $DestinationPath.bak" -ForegroundColor Yellow
     }
 
-    $content = Get-ResourceContent -RelativePath $RelativeSource
-    [System.IO.File]::WriteAllText($DestinationPath, $content, [System.Text.Encoding]::UTF8)
+    if ($IsLocal -and (Test-Path (Join-Path $ScriptDir $RelativeSource))) {
+        Copy-Item -Path (Join-Path $ScriptDir $RelativeSource) -Destination $DestinationPath -Force
+    } else {
+        $url = "$RawBase/$RelativeSource"
+        $webClient = New-Object System.Net.WebClient
+        $webClient.DownloadFile($url, $DestinationPath)
+    }
     Write-Host "  [INSTALLED] $DestinationPath" -ForegroundColor Green
 }
 
