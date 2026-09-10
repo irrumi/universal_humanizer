@@ -1,0 +1,39 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environments & secrets
+.env*
+*.pem
+*.key
+*.log
+id_rsa*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors & IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Builds & archives
+universal-humanizer.zip
+dist/
+build/
