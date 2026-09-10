@@ -1,0 +1,28 @@
+name: Release Package
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Create release archive
+        run: |
+          zip -r universal-humanizer.zip SKILL.md plugin.json gemini-extension.json LICENSE README.md skills/ rules/ commands/ prompts/ agents/ assets/ .claude-plugin/
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ github.ref_name }}" universal-humanizer.zip \
+            --title "Universal Humanizer ${{ github.ref_name }}" \
+            --generate-notes
