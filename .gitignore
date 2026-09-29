@@ -30,8 +30,11 @@ yarn-error.log*
 # Editors & IDEs
 .idea/
 .vscode/
+.cursor/
+.windsurf/
 *.swp
 *.swo
+*.bak
 
 # Builds & archives
 universal-humanizer.zip
