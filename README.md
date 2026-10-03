@@ -1,8 +1,8 @@
 # Universal Humanizer
 
-Cross-platform AI agent skill that detects machine writing tells and rewrites robotic drafts into natural, human-sounding prose without altering facts or code blocks.
+Cross-platform AI agent skill for revising formulaic drafts into natural prose, with instructions to preserve facts and code blocks. Style patterns are editing cues, not evidence of human or AI authorship.
 
-Works across Google Antigravity, Claude Code, Gemini CLI, OpenAI Codex CLI, Cursor, Windsurf, OpenCode, and Claude Desktop with zero external API keys and 100% local execution.
+Works across Google Antigravity, Claude Code, Gemini CLI, OpenAI Codex CLI, Cursor, Windsurf, OpenCode, and Claude Desktop without a separate Humanizer API key. Execution and text handling depend on the host agent and its model provider; see the privacy notes below.
 
 [![Validate Package](https://github.com/irrumi/universal_humanizer/actions/workflows/validate.yml/badge.svg)](https://github.com/irrumi/universal_humanizer/actions/workflows/validate.yml)
 [![Release](https://img.shields.io/github/v/release/irrumi/universal_humanizer?color=blue&label=release)](https://github.com/irrumi/universal_humanizer/releases/latest)
@@ -53,7 +53,7 @@ Universal Humanizer flags specific AI writing tells and returns a direct, natura
 |---|---|
 | **Input (AI Draft)** | *"It's not just an infrastructure migration; it's a testament to our team's relentless commitment to innovation. Nestled within our core distributed architecture, the new message broker stands as a pivotal milestone, fostering robust scalability across disparate microservices."* |
 | **Detected Tells** | Flags **Not X, but Y formula** (§1), **Pseudo-deep aphorism** (§3), **Overused AI words** (*pivotal, robust, nestled*) (§12), and **Inflated significance** (§13). |
-| **Human Rewrite** | **"We migrated our primary message broker to Apache Kafka last month to handle traffic spikes above 12,000 events per second across all internal services."** |
+| **Human Rewrite** | **"The new message broker in our distributed architecture supports scalability across microservices."** |
 
 ---
 
@@ -68,7 +68,7 @@ Modern Large Language Models produce grammatically correct drafts that sound unm
 
 These patterns reduce reader trust, make documentation tiresome to read, and obscure technical details behind marketing fluff.
 
-**Universal Humanizer solves this problem directly within your coding agent.** It acts as an automated editorial filter: scanning drafts against 25 documented AI writing patterns, varying sentence cadences, stripping boilerplate, and anchoring the text in factual details—all while guaranteeing that your code snippets, numbers, URLs, and tables remain completely untouched.
+**Universal Humanizer solves this problem directly within your coding agent.** It acts as an automated editorial filter: scanning drafts against 25 documented AI writing patterns, varying sentence cadences, stripping boilerplate, and anchoring the text in factual details—with instructions to preserve code snippets, numbers, URLs, and tables. These prompt instructions are not programmatic guarantees; review the output before accepting it.
 
 ---
 
@@ -79,24 +79,24 @@ flowchart LR
     A["Draft Text / File<br/>(Markdown prose)"] --> B["Layer 1: Pattern Scanner<br/>(25 AI writing tells)"]
     V["Voice Sample<br/>(Optional user sample)"] -.-> C
     B --> C["Layer 2: Editorial Pass<br/>(Cadence • Burstiness • Fact Shield)"]
-    C --> D["Polished Human Prose<br/>(Direct, grounded, code untouched)"]
+    C --> D["Polished Human Prose<br/>(Review facts and protected content)"]
 ```
 
 1. **Layer 1 (Pattern Neutralization):** Scans the text against a structured catalog of 25 AI tells across five categories (Staging, Rhythm, Inflation, Formatting, and Chatbot Residue).
-2. **Layer 2 (Cadence & Burstiness):** Breaks monotonic 14–19 word sentence rhythms by alternating short punchy statements with clause-rich sentences.
+2. **Layer 2 (Cadence & Burstiness):** Revises monotonous sentence rhythms by alternating short punchy statements with clause-rich sentences.
 3. **Voice Sample Calibration:** Matches your personal writing habits, rhythm, and tone when provided with 2–3 paragraphs of your own authentic writing.
-4. **Fact & Code Shield:** Isolates code blocks, shell commands, tables, and metadata so that only prose is revised. Never invents facts or citations.
+4. **Fact & Code Guidance:** Instructs the host to revise prose while preserving code, commands, tables, metadata, and factual meaning. It does not enforce these instructions programmatically.
 
 ---
 
 ## Features
 
-- **25 Documented AI Writing Detectors:** Catches high-frequency tells (Not-X-but-Y, one-line closers, triads) as well as subtle stylistic leftovers (em-dash abuse, gratuitous bold lists, chatbot boilerplate).
-- **Zero Hallucination Policy:** Retains every verifiable metric, timestamp, function name, and quote. Never invents facts or sources.
-- **Code & Markdown Shield:** When rewriting files, preserves code blocks, inline commands, CLI flags, URLs, tables, and YAML frontmatter untouched.
+- **25 Documented Style Patterns:** Highlights recurring wording (Not-X-but-Y, one-line closers, triads) as well as subtle stylistic leftovers (em-dash abuse, gratuitous bold lists, chatbot boilerplate).
+- **Factual Fidelity Guidance:** Instructs the host to retain metrics, timestamps, function names, quotes, attribution, uncertainty, negation, and scope, without inventing facts or sources.
+- **Code & Markdown Guidance:** When rewriting files, instructs the host to preserve code blocks, inline commands, CLI flags, URLs, tables, and YAML frontmatter untouched.
 - **Voice Sample Calibration:** Analyzes a short sample of your genuine writing to match your unique rhythm, sentence length distribution, and vocabulary.
 - **Bilingual (English & Russian):** Native detection rules tuned for both English and Russian AI cliches (*«не просто X, а Y»*, *«в современном мире»*, *«по своей сути»*).
-- **100% Local & Zero Telemetry:** Runs entirely inside your existing agent prompt context. No third-party servers, no background daemons, no tracking.
+- **Host-Dependent Privacy:** The skill is prompt content, with no separate Humanizer inference service. Your host may send text to its model provider and may log or retain it under its own settings and policies.
 - **Cross-Platform Agent Support:** Single unified prompt architecture compatible with 8+ agent platforms.
 
 ---
@@ -223,13 +223,13 @@ Please humanize this draft using the universal humanizer guidelines:
 [Вставь текст сюда]
 ```
 
-### 4. File Rewriting (Preserves Code, Tables & Metadata)
+### 4. File Rewriting (Preservation Instructions)
 
 Process an entire documentation file in-place:
 ```text
 Humanize the prose in docs/announcement.md
 ```
-*Note: In file mode, Universal Humanizer updates only markdown prose. Code blocks, inline commands, URLs, YAML frontmatter, and data tables are left untouched.*
+*Note: File-mode instructions ask the host to edit only prose and preserve code, commands, URLs, frontmatter, and tables. No byte-level verifier enforces this. Review the diff before accepting file changes.*
 
 ### 5. Matching Your Authentic Voice (Voice Calibration)
 
@@ -270,7 +270,7 @@ The catalog organizes 25 AI writing patterns into five logical groups, ordered f
 | 8 | **Em Dashes Everywhere** *(weak alone)* | Unchecked em dashes (—) joining unrelated thoughts | Use periods, commas, or conjunctions; match sample |
 | 9 | **Stacked Hedges** *(weak alone)* | *"It could potentially arguably be considered that..."* | Retain hedges only when factual uncertainty exists |
 | 10 | **Indiscriminate Hyphens** *(weak alone)* | *"The service is cloud-native and client-facing"* | Remove hyphens in predicate adjectives |
-| 11 | **Passive Obfuscation** *(weak alone)* | *"Mistakes were identified during deployment"* | Name the actor and specific malfunction directly |
+| 11 | **Passive Obfuscation** *(weak alone)* | *"Mistakes were identified during deployment"* | Name the actor or malfunction only when supplied |
 
 ### C. Inflation and Borrowed Authority
 
@@ -278,10 +278,10 @@ The catalog organizes 25 AI writing patterns into five logical groups, ordered f
 |---|---|---|---|
 | 12 | **Overused AI Words** | *delve, landscape, tapestry, robust, pivotal, bolster* / *«в современном мире»* | Substitute with plain, direct terminology |
 | 13 | **Inflated Significance** | *"stands as a testament"*, *"paving the way for a bright future"* | Drop unearned historical drama; report results |
-| 14 | **Vague Connections** | *"is associated with the development of"* | Name the exact role or causal relationship |
+| 14 | **Vague Connections** | *"is associated with the development of"* | Preserve vague scope unless a precise relationship is supplied |
 | 15 | **Shallow Participial Riders** | *"...ensuring seamless operational excellence"* | Drop trailing -ing appendages or make them concrete |
 | 16 | **Promotional Gloss** | *"Nestled in the heart of..."*, *"boasts world-class"* | Describe physical location and features objectively |
-| 17 | **Borrowed Authority** | *"Experts agree that..."*, *"Industry studies indicate..."* | Cite the specific study/source or state claim simply |
+| 17 | **Borrowed Authority** | *"Experts agree that..."*, *"Industry studies indicate..."* | Retain attribution; ask for a source rather than inventing one |
 | 18 | **Avoiding Simple Copulas** | *"serves as a primary component"*, *"functions to"* | Use direct verbs: *is*, *are*, *has*, *does* |
 
 ### D. Formulaic Formatting
@@ -305,10 +305,10 @@ The catalog organizes 25 AI writing patterns into five logical groups, ordered f
 
 ## The 5-Step Editorial Methodology
 
-Universal Humanizer incorporates a proven editorial workflow:
+Universal Humanizer describes an editorial workflow:
 
 1. **Voice Sample Calibration:** Analyzes authentic text from the writer to match cadence, sentence length distributions, and stylistic quirks. The user's sample takes precedence over general rules.
-2. **Cadence & Burstiness Control:** Unsupervised LLMs default to sentences of 14–19 words. The skill breaks this cadence by interlocking short sentences (under 8 words) with longer, clause-rich statements (over 25 words).
+2. **Cadence & Burstiness Control:** The skill suggests varying sentence length where repetition hurts readability. Word counts do not establish authorship.
 3. **Audience Anchoring:** Eliminates "average reader" vagueness by adjusting technical depth and tone for a specific target audience.
 4. **Empirical Grounding:** Preserves grounded, lived details (timestamps, mixed feelings, physical obstacles, specific tools) while strictly forbidding fabricated facts.
 5. **Read-Aloud Breath Test:** Simulates vocal performance. If phrasing causes awkward pauses or breath exhaustion, it is rewritten.
@@ -317,13 +317,15 @@ Universal Humanizer incorporates a proven editorial workflow:
 
 ## Full Transformation Examples
 
+Only the displayed input supplies facts; no additional context is assumed. These conservative edits retain uncertainty and attribution. Unspecified expert claims still need a source before publication. The [example audit](evals/README.md) records the limits of this review.
+
 ### English Example (Engineering Blog / PR Summary)
 
 **Before (AI-Generated Draft):**
 > It's not just an infrastructure migration; it's a testament to our team's relentless commitment to innovation. Nestled within our core distributed architecture, the new message broker stands as a pivotal milestone, fostering robust scalability across disparate microservices. Experts agree that asynchronous queuing plays a key role in the modern cloud landscape. From request throttling to telemetry aggregation, every component works in perfect harmony, ensuring seamless operational excellence. The journey was not without its challenges, but the future looks incredibly bright. 🚀
 
 **After (Universal Humanizer):**
-> We migrated our primary message broker to Apache Kafka last month. The old RabbitMQ cluster was dropping consumer connections whenever throughput exceeded 12,000 events per second. The migration took three weekends of backfilling partition logs and required rewriting our retry handlers, but p99 event latency dropped from 85ms to 14ms across all production services.
+> The new message broker in our distributed architecture supports scalability across microservices. Experts agree that asynchronous queuing plays a key role in the modern cloud landscape. Components including request throttling and telemetry aggregation work together. The migration had challenges.
 
 ---
 
@@ -333,18 +335,18 @@ Universal Humanizer incorporates a proven editorial workflow:
 > В современном быстро меняющемся мире веб-разработки крайне важно отметить, что переписывание старого кода — это не просто рутинная задача, а глубокий процесс трансформации всей экосистемы проекта. Наша новая архитектура выступает в роли надежного фундамента, гармонично сочетая гибкость и безопасность. Эксперты сходятся во мнении, что чистый код открывает новые горизонты для масштабирования. Давайте погрузимся в детали и разберёмся, как это работает на практике. И это меняет всё. 💡
 
 **После (Universal Humanizer):**
-> В апреле мы переписали модуль авторизации. Старый монолитный контроллер накопил три тысячи строк спагетти-кода, в котором любая смена тарифа ломала сессии пользователей. Мы разделили логику на два отдельных сервиса и настроили валидацию токенов через Redis. Время ответа на логине упало со 180 до 35 миллисекунд.
+> Переписывание старого кода меняет экосистему проекта. Наша новая архитектура служит надёжным фундаментом, сочетая гибкость и безопасность. Эксперты считают, что чистый код расширяет возможности масштабирования.
 
 ---
 
-## Safety, Privacy & Execution Guarantees
+## Safety, Privacy & Verification Limits
 
-- **100% Local Execution:** Universal Humanizer executes entirely within your existing agent runtime. Your text is never transmitted to external third-party services.
-- **Zero Telemetry & Tracking:** No analytics, pingbacks, or external network requests during runtime.
-- **Zero Hallucination Guarantee:** The skill is strictly prohibited from inventing names, dates, metrics, quotes, or claims not found in your source draft.
-- **Code & Syntax Shield:** When rewriting markdown files, code blocks (````python ... ````), inline backticks, CLI flags, URLs, data tables, and YAML frontmatter are protected and preserved byte-for-byte.
-- **Prompt Injection Defense:** Input text is parsed strictly as passive data to edit, never as execution instructions.
-- **Safe Installation:** Installers (`install.sh` and `install.ps1`) support `--dry-run` and automatically create `.bak` backups before modifying any existing configuration.
+- **Host-provider privacy:** Universal Humanizer supplies prompt instructions, not a local model. The host agent may transmit drafts, files, and voice samples to its model provider and may retain or log them. Check that host's configuration and privacy policy before submitting confidential text. This package does not guarantee local-only processing or absence of host telemetry.
+- **Factual fidelity:** The prompt prohibits invented names, dates, metrics, quotes, or citations and asks the host to preserve uncertainty, attribution, negation, and scope. A model can still violate these instructions; review the rewrite against its input.
+- **Protected content:** Instructions ask the host to leave code, commands, paths, URLs, tables, and frontmatter unchanged. There is no byte-for-byte enforcement or transactional file writer in this skill.
+- **Untrusted input:** Instructions tell the host to treat submitted text as material to edit, not as commands. This is guidance, not a security boundary.
+- **Installation:** Inspect installer scripts and their proposed changes before use. Dry-run and backup features are not proof against failed downloads, overwritten backups, or scope errors; sandbox runtime coverage remains separate work.
+- **Validation scope:** Package validation checks packaging and synchronization. The example tests detect changes to reviewed fixtures; they do not prove model behavior or semantic correctness. No live model evaluation is claimed.
 
 ---
 
@@ -392,6 +394,7 @@ python3 scripts/sync-skill.py
 
 # 3. Run validation test suite
 python3 scripts/validate-package.py
+python3 -m unittest discover -s tests -v
 ```
 
 ### Full Validation Suite
