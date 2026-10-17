@@ -59,7 +59,7 @@ Push your changes to a feature branch and open a pull request against `main`. Al
 
 ## Ground Rules
 
-- **Zero Hallucination Guarantee:** The skill must never encourage hallucinating facts, metrics, or citations.
+- **Factual Fidelity Guidance:** The skill must never encourage hallucinating facts, metrics, or citations.
 - **Strict Version Synchronization:** If bumping versions, ensure `SKILL.md`, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and `CHANGELOG.md` all share the identical semantic version.
 - **Preserve Code & Data:** Prompt updates must maintain safeguards preventing AI agents from modifying code blocks, tables, URLs, or frontmatter metadata during file-level rewrites.
 

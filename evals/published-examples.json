@@ -1,0 +1,284 @@
+[
+  {
+    "id": "skill-01-en",
+    "input": "It's not just a database upgrade; it's a fundamental reimagining of our persistence layer.",
+    "output": "We are upgrading the database and rethinking our persistence layer.",
+    "invariants": "Upgrade and rethinking; analytics and decision-making. No latency, transactions, dashboard, cohorts or real-time features."
+  },
+  {
+    "id": "skill-01-ru",
+    "input": "Это не просто инструмент для аналитики, это новая философия принятия решений.",
+    "output": "Это инструмент для аналитики и новый подход к принятию решений.",
+    "invariants": "Upgrade and rethinking; analytics and decision-making. No latency, transactions, dashboard, cohorts or real-time features."
+  },
+  {
+    "id": "skill-02-en",
+    "input": "Automated backups run every six hours across three regions. That is the real game changer.",
+    "output": "Automated backups run every six hours across three regions.",
+    "invariants": "Six hours, three regions; deployment from half an hour to three minutes. No cloud independence or pipeline cause."
+  },
+  {
+    "id": "skill-02-ru",
+    "input": "Мы сократили время деплоя с получаса до трёх минут. И это только начало.",
+    "output": "Мы сократили время деплоя с получаса до трёх минут.",
+    "invariants": "Six hours, three regions; deployment from half an hour to three minutes. No cloud independence or pipeline cause."
+  },
+  {
+    "id": "skill-03-en",
+    "input": "At its core, asynchronous communication is the currency of engineering velocity.",
+    "output": "Asynchronous communication helps engineering teams work faster.",
+    "invariants": "Preserve the original abstract claims without inventing code review, teams, networking or mechanisms."
+  },
+  {
+    "id": "skill-03-ru",
+    "input": "По своей сути архитектура микросервисов — это зеркало зрелости вашей инженерной культуры.",
+    "output": "Архитектура микросервисов отражает зрелость вашей инженерной культуры.",
+    "invariants": "Preserve the original abstract claims without inventing code review, teams, networking or mechanisms."
+  },
+  {
+    "id": "skill-04-en",
+    "input": "Let's take a deep dive into how TLS handshakes work. Here is what you need to know.",
+    "output": "How TLS handshakes work.",
+    "invariants": "Topics only: TLS handshakes and Go garbage collection. No algorithm or protocol detail supplied."
+  },
+  {
+    "id": "skill-04-ru",
+    "input": "Давайте подробно разберёмся, как работает сборщик мусора в Go. Вот ключевые моменты:",
+    "output": "Как работает сборщик мусора в Go.",
+    "invariants": "Topics only: TLS handshakes and Go garbage collection. No algorithm or protocol detail supplied."
+  },
+  {
+    "id": "skill-05-en",
+    "input": "This isn't to say that unit tests don't matter, but end-to-end testing catches regressions across services.",
+    "output": "Unit tests matter, and end-to-end testing catches regressions across services.",
+    "invariants": "Preserve unit-test relevance and cross-service regressions; retain the Russian denial and clarity goal."
+  },
+  {
+    "id": "skill-05-ru",
+    "input": "Кто-то может подумать, что документация больше не нужна, но я не утверждаю этого. Речь о том, что код должен быть понятным.",
+    "output": "Я не утверждаю, что документация больше не нужна. Код должен быть понятным.",
+    "invariants": "Preserve unit-test relevance and cross-service regressions; retain the Russian denial and clarity goal."
+  },
+  {
+    "id": "skill-06-en",
+    "input": "Our release pipeline delivers velocity, reliability, and peace of mind to our engineering staff.",
+    "output": "Our release pipeline gives our engineering staff speed, reliability, and peace of mind.",
+    "invariants": "Keep the three supplied benefits. A triad alone does not justify removing claims or adding metrics."
+  },
+  {
+    "id": "skill-06-ru",
+    "input": "Наша платформа обеспечивает надёжность, гибкость и масштабируемость для каждого клиента.",
+    "output": "Наша платформа обеспечивает надёжность, гибкость и масштабируемость для каждого клиента.",
+    "invariants": "Keep the three supplied benefits. A triad alone does not justify removing claims or adding metrics."
+  },
+  {
+    "id": "skill-07-en",
+    "input": "The server receives the packet. The server inspects the header. The server routes the payload.",
+    "output": "The server receives the packet, inspects the header, and routes the payload.",
+    "invariants": "Receive, inspect, route; validate token and permissions, then open session access. No worker or new session creation."
+  },
+  {
+    "id": "skill-07-ru",
+    "input": "Система проверяет токен. Система валидирует права. Система открывает доступ к сессии.",
+    "output": "Система проверяет токен, валидирует права и открывает доступ к сессии.",
+    "invariants": "Receive, inspect, route; validate token and permissions, then open session access. No worker or new session creation."
+  },
+  {
+    "id": "skill-08-en",
+    "input": "The container crashed — despite sufficient allocated memory — causing an unexpected failover.",
+    "output": "The container crashed despite sufficient allocated memory, causing an unexpected failover.",
+    "invariants": "Sufficient memory despite crash and unexpected failover; engineers not consulted and releases delayed. No invented cause or review stage."
+  },
+  {
+    "id": "skill-08-ru",
+    "input": "Новый регламент — принятый без согласования с инженерами — привёл к задержкам релизов.",
+    "output": "Новый регламент приняли без согласования с инженерами, что привело к задержкам релизов.",
+    "invariants": "Sufficient memory despite crash and unexpected failover; engineers not consulted and releases delayed. No invented cause or review stage."
+  },
+  {
+    "id": "skill-09-en",
+    "input": "It could potentially be considered that this indexing strategy might arguably improve throughput.",
+    "output": "This indexing strategy might improve throughput.",
+    "invariants": "Possible throughput improvement and qualified response improvement, not measured results. No Redis, index columns or 40%."
+  },
+  {
+    "id": "skill-09-ru",
+    "input": "Представляется вероятным, что внедрение кэширования могло бы в определённой степени оптимизировать отклик.",
+    "output": "Внедрение кэширования могло бы в некоторой степени улучшить отклик.",
+    "invariants": "Possible throughput improvement and qualified response improvement, not measured results. No Redis, index columns or 40%."
+  },
+  {
+    "id": "skill-10-en",
+    "input": "The pipeline is end-to-end, the strategy is customer-centric, and the framework is battle-tested.",
+    "output": "The pipeline is end to end, the strategy is customer centric, and the framework is battle tested.",
+    "invariants": "Only hyphenation/wording changes; no invented proven solutions."
+  },
+  {
+    "id": "skill-10-ru",
+    "input": "Наш подход является клиенто-ориентированным и высоко-технологичным.",
+    "output": "Наш подход ориентирован на клиентов и основан на высоких технологиях.",
+    "invariants": "Only hyphenation/wording changes; no invented proven solutions."
+  },
+  {
+    "id": "skill-11-en",
+    "input": "Mistakes were observed during the migration script execution.",
+    "output": "Errors were observed while the migration script ran.",
+    "invariants": "Observed errors during script execution; decision to change log format. No actor, JSON, constraint failure or completed migration."
+  },
+  {
+    "id": "skill-11-ru",
+    "input": "Было принято решение об изменении формата логов.",
+    "output": "Решили изменить формат логов.",
+    "invariants": "Observed errors during script execution; decision to change log format. No actor, JSON, constraint failure or completed migration."
+  },
+  {
+    "id": "skill-12-en",
+    "input": "We delve into the intricate landscape of distributed systems, showcasing robust solutions that bolster fault tolerance.",
+    "output": "We examine distributed systems and present solutions that improve fault tolerance.",
+    "invariants": "Distributed systems and fault tolerance; framework importance. No consensus algorithm, gRPC or new audience."
+  },
+  {
+    "id": "skill-12-ru",
+    "input": "В современном быстро меняющемся мире важно отметить, что данный фреймворк стал неотъемлемой частью разработки.",
+    "output": "Этот фреймворк стал важной частью разработки.",
+    "invariants": "Distributed systems and fault tolerance; framework importance. No consensus algorithm, gRPC or new audience."
+  },
+  {
+    "id": "skill-13-en",
+    "input": "The rollout of Version 2.4 stands as a testament to our relentless dedication, paving the way for a revolutionary tomorrow.",
+    "output": "Version 2.4 has been rolled out.",
+    "invariants": "Version 2.4 rollout and a new office. No OAuth, bug counts, city or office purpose."
+  },
+  {
+    "id": "skill-13-ru",
+    "input": "Открытие нового офиса знаменует поворотный момент в истории компании, закладывая фундамент для будущих побед.",
+    "output": "Компания открыла новый офис.",
+    "invariants": "Version 2.4 rollout and a new office. No OAuth, bug counts, city or office purpose."
+  },
+  {
+    "id": "skill-14-en",
+    "input": "His name is closely associated with the development of the routing module.",
+    "output": "His name is closely associated with the development of the routing module.",
+    "invariants": "Association only. Leave unchanged rather than invent a role, year or Kubernetes activity."
+  },
+  {
+    "id": "skill-14-ru",
+    "input": "Этот специалист связан с оптимизацией производительности кластера.",
+    "output": "Этот специалист связан с оптимизацией производительности кластера.",
+    "invariants": "Association only. Leave unchanged rather than invent a role, year or Kubernetes activity."
+  },
+  {
+    "id": "skill-15-en",
+    "input": "The team implemented automated health checks, ensuring uninterrupted operational excellence.",
+    "output": "The team implemented automated health checks.",
+    "invariants": "Automated health checks and account UI update. Remove promotional gloss; do not invent restarts or UI features."
+  },
+  {
+    "id": "skill-15-ru",
+    "input": "Мы обновили интерфейс личного кабинета, демонстрируя приверженность высоким стандартам обслуживания.",
+    "output": "Мы обновили интерфейс личного кабинета.",
+    "invariants": "Automated health checks and account UI update. Remove promotional gloss; do not invent restarts or UI features."
+  },
+  {
+    "id": "skill-16-en",
+    "input": "Nestled in downtown, the state-of-the-art data center boasts world-class server capabilities.",
+    "output": "The data center is downtown.",
+    "invariants": "Downtown location and service for businesses of any size; no redundancy tier, utility feeds, billing or Telegram."
+  },
+  {
+    "id": "skill-16-ru",
+    "input": "Наш инновационный сервис предлагает потрясающий спектр возможностей для бизнеса любого масштаба.",
+    "output": "Наш сервис предлагает возможности для бизнеса любого масштаба.",
+    "invariants": "Downtown location and service for businesses of any size; no redundancy tier, utility feeds, billing or Telegram."
+  },
+  {
+    "id": "skill-17-en",
+    "input": "Experts believe that static typing significantly mitigates software vulnerabilities.",
+    "output": "Experts believe that static typing significantly mitigates software vulnerabilities.",
+    "invariants": "Retain attribution and belief/claim status. Source unspecified; ask for citation separately, never fabricate a study or reverse the claim."
+  },
+  {
+    "id": "skill-17-ru",
+    "input": "Эксперты утверждают, что монолитная архитектура устарела.",
+    "output": "Эксперты утверждают, что монолитная архитектура устарела.",
+    "invariants": "Retain attribution and belief/claim status. Source unspecified; ask for citation separately, never fabricate a study or reverse the claim."
+  },
+  {
+    "id": "skill-18-en",
+    "input": "The primary node serves as the central orchestrator for task distribution.",
+    "output": "The primary node orchestrates task distribution.",
+    "invariants": "Task-distribution role and caching tool. No storage location or cached object invented."
+  },
+  {
+    "id": "skill-18-ru",
+    "input": "Данная библиотека выступает в качестве эффективного инструмента кэширования.",
+    "output": "Эта библиотека — эффективный инструмент кэширования.",
+    "invariants": "Task-distribution role and caching tool. No storage location or cached object invented."
+  },
+  {
+    "id": "skill-19-en",
+    "input": "- **Scalability:** The architecture scales horizontally across clusters.\n  - **Security:** Data is protected via AES-256 encryption.\n  - **Usability:** The interface is streamlined for rapid onboarding.",
+    "output": "The architecture scales horizontally across clusters. Data is protected with AES-256 encryption, and the interface is streamlined for rapid onboarding.",
+    "invariants": "Horizontal scaling, AES-256 and rapid onboarding; hourly backups and 50 milliseconds. No at-rest scope, configuration file, database actor or mean/bound."
+  },
+  {
+    "id": "skill-19-ru",
+    "input": "- **Надёжность:** Резервные копии создаются каждый час.\n  - **Скорость:** Запросы обрабатываются за 50 миллисекунд.",
+    "output": "Резервные копии создаются каждый час. Запросы обрабатываются за 50 миллисекунд.",
+    "invariants": "Horizontal scaling, AES-256 and rapid onboarding; hourly backups and 50 milliseconds. No at-rest scope, configuration file, database actor or mean/bound."
+  },
+  {
+    "id": "skill-20-en",
+    "input": "## 🚀 Key Architectural Insights And Breakthrough Innovations ⚡",
+    "output": "## Key architectural insights and breakthrough innovations",
+    "invariants": "Header wording and subject preserved; no benchmarks or new architecture."
+  },
+  {
+    "id": "skill-20-ru",
+    "input": "### 💡 Главные Преимущества И Стратегические Выгоды Проекта 🔥",
+    "output": "### Главные преимущества и стратегические выгоды проекта",
+    "invariants": "Header wording and subject preserved; no benchmarks or new architecture."
+  },
+  {
+    "id": "skill-23-en",
+    "input": "While official records regarding his childhood are unavailable, he likely developed a passion for mathematics at an early age.",
+    "output": "Official records regarding his childhood are unavailable.",
+    "invariants": "EN explicitly removes conjecture while retaining missing records; RU preserves unknown exact date and tentative year-end prediction, not an unannounced-date claim."
+  },
+  {
+    "id": "skill-23-ru",
+    "input": "Хотя информации о точной дате релиза нет, вероятно, проект выйдет в конце года.",
+    "output": "Информации о точной дате релиза нет. Вероятно, проект выйдет в конце года.",
+    "invariants": "EN explicitly removes conjecture while retaining missing records; RU preserves unknown exact date and tentative year-end prediction, not an unannounced-date claim."
+  },
+  {
+    "id": "skill-24-en",
+    "input": "### Database Migration Strategy\n  Planning a database migration strategy requires careful planning.",
+    "output": "### Database migration strategy\n  A database migration requires careful planning.",
+    "invariants": "Migration planning requires care; no timing, replication or clusters supplied."
+  },
+  {
+    "id": "skill-25-en",
+    "input": "This endpoint was refactored from a synchronous loop into a Redis pub/sub queue to resolve timeout errors.",
+    "output": "This endpoint was changed from a synchronous loop to a Redis pub/sub queue to address timeout errors.",
+    "invariants": "Retain synchronous-loop history, Redis pub/sub and intent to address timeout errors; do not claim the errors were fixed."
+  },
+  {
+    "id": "readme-quick",
+    "input": "It's not just an infrastructure migration; it's a testament to our team's relentless commitment to innovation. Nestled within our core distributed architecture, the new message broker stands as a pivotal milestone, fostering robust scalability across disparate microservices.",
+    "output": "The new message broker in our distributed architecture supports scalability across microservices.",
+    "invariants": "New broker, distributed architecture, scalability across microservices. No technology, date, rate, primary broker or all-services scope supplied."
+  },
+  {
+    "id": "readme-en",
+    "input": "It's not just an infrastructure migration; it's a testament to our team's relentless commitment to innovation. Nestled within our core distributed architecture, the new message broker stands as a pivotal milestone, fostering robust scalability across disparate microservices. Experts agree that asynchronous queuing plays a key role in the modern cloud landscape. From request throttling to telemetry aggregation, every component works in perfect harmony, ensuring seamless operational excellence. The journey was not without its challenges, but the future looks incredibly bright. 🚀",
+    "output": "The new message broker in our distributed architecture supports scalability across microservices. Experts agree that asynchronous queuing plays a key role in the modern cloud landscape. Components including request throttling and telemetry aggregation work together. The migration had challenges.",
+    "invariants": "Preserve distributed architecture, broker, scalability, attributed expert claim, throttling and telemetry, and challenges. Drop promotional gloss; no Kafka, RabbitMQ, timeline, throughput or latency measurements."
+  },
+  {
+    "id": "readme-ru",
+    "input": "В современном быстро меняющемся мире веб-разработки крайне важно отметить, что переписывание старого кода — это не просто рутинная задача, а глубокий процесс трансформации всей экосистемы проекта. Наша новая архитектура выступает в роли надежного фундамента, гармонично сочетая гибкость и безопасность. Эксперты сходятся во мнении, что чистый код открывает новые горизонты для масштабирования. Давайте погрузимся в детали и разберёмся, как это работает на практике. И это меняет всё. 💡",
+    "output": "Переписывание старого кода меняет экосистему проекта. Наша новая архитектура служит надёжным фундаментом, сочетая гибкость и безопасность. Эксперты считают, что чистый код расширяет возможности масштабирования.",
+    "invariants": "Preserve code rewrite, architecture, reliability, flexibility, security and attributed scaling claim. No April, authorization module, line counts, Redis, services or login timings."
+  }
+]
